@@ -1,6 +1,7 @@
 package hu.petrik.festmeny.festmenyek;
 
 import java.time.LocalDateTime;
+import java.util.Scanner;
 
 public class Festmeny {
     private String cim;
@@ -10,6 +11,8 @@ public class Festmeny {
     private int legmagasabbLicit;
     private LocalDateTime legutolsoLicitIdeje;
     private boolean elkelt;
+
+    Scanner sc = new Scanner(System.in);
 
     public Festmeny(String cim, String festo, String stilus) {
         this.cim = cim;
@@ -42,7 +45,7 @@ public class Festmeny {
     }
 
     public void setElkelt(boolean elkelt) {
-        this.elkelt = elkelt;
+        return;
     }
 
     public void licit() {
@@ -56,6 +59,26 @@ public class Festmeny {
             legmagasabbLicit += legmagasabbLicit * 0.1;
             licitekSzama++;
             legutolsoLicitIdeje = LocalDateTime.now();
+        }
+    }
+
+    public void licit(int mertek){
+        if (elkelt) {
+            System.out.println("Hiba! A festmény már elkelt!");
+        } else if (licitekSzama == 0) {
+            legmagasabbLicit = 100;
+            licitekSzama++;
+            legutolsoLicitIdeje = LocalDateTime.now();
+        } else {
+            System.out.print("Kérem adja meg a % mértékét");
+            int szazalek = sc.nextInt();
+            if (szazalek <10 || szazalek > 100){
+                System.out.println("Hiba! A megadott % nem 10 és 100 között van!");
+            } else {
+                legmagasabbLicit += legmagasabbLicit * (szazalek/100);
+                licitekSzama++;
+                legutolsoLicitIdeje = LocalDateTime.now();
+            }
         }
     }
 }
