@@ -81,4 +81,9 @@ public class Festmeny {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s: %s (%s)\r\n%s\r\n%d $ - %s (összesen: %d db)", this.festo, this.cim, this.stilus, this.elkelt, this.legmagasabbLicit, this.legutolsoLicitIdeje, this.licitekSzama);
+    }
 }

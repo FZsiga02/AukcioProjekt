@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f0997b-b05e-4d7a-8d4c-41f75ddd543a" name="Changes" comment="Licit()">
+    <list default="true" id="c3f0997b-b05e-4d7a-8d4c-41f75ddd543a" name="Changes" comment="Licit(int mertek)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Festmeny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Festmeny.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +40,26 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hu.petrik.festmeny.festmenyek.Main" />
+      <module name="AukcioProjekt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hu.petrik.festmeny.festmenyek.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -68,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663829241308</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Licit(int mertek)">
+      <created>1663829804983</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663829804983</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,6 +115,7 @@
     <MESSAGE value="Create repository" />
     <MESSAGE value="Festmeny class" />
     <MESSAGE value="Licit()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Licit()" />
+    <MESSAGE value="Licit(int mertek)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Licit(int mertek)" />
   </component>
 </project>
