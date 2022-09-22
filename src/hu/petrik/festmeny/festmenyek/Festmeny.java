@@ -1,7 +1,13 @@
 package hu.petrik.festmeny.festmenyek;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.List;
 
 public class Festmeny {
     private String cim;
@@ -14,13 +20,10 @@ public class Festmeny {
 
     Scanner sc = new Scanner(System.in);
 
-    public Festmeny(String cim, String festo, String stilus, int licitekSzama, int legmagasabbLicit, boolean elkelt) {
+    public Festmeny(String cim, String festo, String stilus) {
         this.cim = cim;
         this.festo = festo;
         this.stilus = stilus;
-        this.licitekSzama = licitekSzama;
-        this.legmagasabbLicit = legmagasabbLicit;
-        this.elkelt = elkelt;
     }
 
     public String getFesto() {
@@ -65,7 +68,7 @@ public class Festmeny {
         }
     }
 
-    public void licit(int mertek){
+    public void licit(int mertek) {
         if (elkelt) {
             System.out.println("Hiba! A festmény már elkelt!");
         } else if (licitekSzama == 0) {
@@ -75,18 +78,22 @@ public class Festmeny {
         } else {
             System.out.print("Kérem adja meg a % mértékét");
             int szazalek = sc.nextInt();
-            if (szazalek <10 || szazalek > 100){
+            if (szazalek < 10 || szazalek > 100) {
                 System.out.println("Hiba! A megadott % nem 10 és 100 között van!");
             } else {
-                legmagasabbLicit += legmagasabbLicit * (szazalek/100);
+                legmagasabbLicit += legmagasabbLicit * (szazalek / 100);
                 licitekSzama++;
                 legutolsoLicitIdeje = LocalDateTime.now();
             }
         }
     }
 
+
+
     @Override
     public String toString() {
         return String.format("%s: %s (%s)\r\n%s\r\n%d $ - %s (összesen: %d db)\r\n", this.festo, this.cim, this.stilus, this.elkelt, this.legmagasabbLicit, this.legutolsoLicitIdeje, this.licitekSzama);
     }
+
+
 }
