@@ -42,6 +42,15 @@ public class Main {
             e.printStackTrace(System.err);
         }
 
+        System.out.print("Kérem adja meg a festmény sorszámát: ");
+        int sorszam = sc.nextInt();
+        while (sorszam>festmenyek.size()){
+            System.out.println("Hiba! Nem létezik ez a sorszám!");
+        }
+        if (Double.isNaN(sorszam)){
+            System.out.println("Hiba! A megadott sorszám nem egy szám!");
+        }
+
         System.out.println(festmenyek);
     }
 
@@ -57,5 +66,12 @@ public class Main {
         }
         br.close();
         fr.close();
+    }
+
+    public static void random(){
+        for (int i = 0; i < 20; i++) {
+            int random = (int)(Math.random()*festmenyek.size());
+
+        }
     }
 }

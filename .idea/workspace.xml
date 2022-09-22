@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f0997b-b05e-4d7a-8d4c-41f75ddd543a" name="Changes" comment="Array">
-      <change afterPath="$PROJECT_DIR$/festmenyek.csv" afterDir="false" />
+    <list default="true" id="c3f0997b-b05e-4d7a-8d4c-41f75ddd543a" name="Changes" comment="Read file, List">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Festmeny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Festmeny.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663831746932</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Read file, List">
+      <created>1663835422625</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663835422625</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +142,7 @@
     <MESSAGE value="Licit(int mertek)" />
     <MESSAGE value="toString()" />
     <MESSAGE value="Array" />
-    <option name="LAST_COMMIT_MESSAGE" value="Array" />
+    <MESSAGE value="Read file, List" />
+    <option name="LAST_COMMIT_MESSAGE" value="Read file, List" />
   </component>
 </project>
