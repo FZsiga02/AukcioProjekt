@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f0997b-b05e-4d7a-8d4c-41f75ddd543a" name="Changes" comment="Licit(int mertek)">
+    <list default="true" id="c3f0997b-b05e-4d7a-8d4c-41f75ddd543a" name="Changes" comment="toString()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Festmeny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Festmeny.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/petrik/festmeny/festmenyek/Main.java" afterDir="false" />
@@ -97,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663829804983</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="toString()">
+      <created>1663830760690</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663830760690</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,6 +123,7 @@
     <MESSAGE value="Festmeny class" />
     <MESSAGE value="Licit()" />
     <MESSAGE value="Licit(int mertek)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Licit(int mertek)" />
+    <MESSAGE value="toString()" />
+    <option name="LAST_COMMIT_MESSAGE" value="toString()" />
   </component>
 </project>

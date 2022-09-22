@@ -14,10 +14,13 @@ public class Festmeny {
 
     Scanner sc = new Scanner(System.in);
 
-    public Festmeny(String cim, String festo, String stilus) {
+    public Festmeny(String cim, String festo, String stilus, int licitekSzama, int legmagasabbLicit, boolean elkelt) {
         this.cim = cim;
         this.festo = festo;
         this.stilus = stilus;
+        this.licitekSzama = licitekSzama;
+        this.legmagasabbLicit = legmagasabbLicit;
+        this.elkelt = elkelt;
     }
 
     public String getFesto() {
@@ -84,6 +87,6 @@ public class Festmeny {
 
     @Override
     public String toString() {
-        return String.format("%s: %s (%s)\r\n%s\r\n%d $ - %s (összesen: %d db)", this.festo, this.cim, this.stilus, this.elkelt, this.legmagasabbLicit, this.legutolsoLicitIdeje, this.licitekSzama);
+        return String.format("%s: %s (%s)\r\n%s\r\n%d $ - %s (összesen: %d db)\r\n", this.festo, this.cim, this.stilus, this.elkelt, this.legmagasabbLicit, this.legutolsoLicitIdeje, this.licitekSzama);
     }
 }
