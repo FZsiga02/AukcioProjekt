@@ -5,56 +5,78 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
-    static List<Festmeny> festmenyek;
+    private static List<Festmeny> festmenyek = new ArrayList<>();
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-
-        festmenyek = new ArrayList<>();
-        festmenyek.add(new Festmeny("Mona Lisa", "Leonardo da Vinci", "Reneszánsz"));
-        festmenyek.add(new Festmeny("A sikoly", "Edvard Munch", "Expresszionizmus"));
-
-        System.out.print("Kérem adja meg, hogy hány festményt adjon hozzá a listához: ");
-        int darab = sc.nextInt();
-        sc.nextLine();
-        for (int i = 0; i < darab; i++) {
-            System.out.print("Festmény címe: ");
-            String cim = sc.nextLine();
-            System.out.print("Festő neve: ");
-            String nev = sc.nextLine();
-            System.out.print("Festmény stílusa: ");
-            String stilus = sc.nextLine();
-            festmenyek.add(new Festmeny(cim, nev, stilus));
+        Festmeny festmeny = new Festmeny("Galambok a Hősök terén", "Gipsz Jakab", "Expresszionizmus");
+        Festmeny festmeny2 = new Festmeny("Budapest éjszaka", "Teszt Elek", "Expresszionizmus");
+        festmenyek.add(festmeny);
+        festmenyek.add(festmeny2);
+        try{
+            festmenyekFelveteleKonzolrol();
+        } catch (InputMismatchException e){
+            System.out.println("Nem megfelelő számot adott meg, nem lesz felvéve festmény");
+        }
+        String fajNev = "festmenyek.csv";
+        try{
+            festmenyekBeolvasasaFajlbol("festmenyek.csv");
+        } catch(FileNotFoundException e){
+            System.out.printf("Hiba történt a beolvasáskor a(z) %s fájl nem található", fajNev);
+        } catch(IOException e){
+            System.out.println("Ismeretlen hiba történt a fájl olvasása során");
+            e.printStackTrace();
+        }
+        veletlenszeruLicit();
+        konzolosLicitalas();
+        for (Festmeny f:festmenyek){
+            System.out.println(f);
         }
 
-        String fajlNev = "festmenyek.csv";
 
-        try {
-            beolvas("festmenyek.csv");
-        } catch (IOException e) {
-            e.printStackTrace(System.err);
-        }
 
-        System.out.print("Kérem adja meg a festmény sorszámát: ");
-        int sorszam = sc.nextInt();
-        while (sorszam>festmenyek.size()){
-            System.out.println("Hiba! Nem létezik ez a sorszám!");
-        }
-        if (Double.isNaN(sorszam)){
-            System.out.println("Hiba! A megadott sorszám nem egy szám!");
-        }
 
-        System.out.println(festmenyek);
+        /*for (int i = 0; i < 50; i++) {
+            festmeny.licit();
+        }
+        System.out.println(festmeny.getLegmagasabbLicit());*/
+
+
     }
 
-    public static void beolvas(String fajlNev) throws IOException {
+    private static void konzolosLicitalas() {
+        Scanner sc = new Scanner(System.in);
+        int festmenyIndex = -1;
+        while(festmenyIndex == 0){
+            System.out.print("Kérem adja meg a festmény sorszámát amire licitálna (kilépéshez 0-t adjon meg):");
+            festmenyIndex = sc.nextInt();
+            if (festmenyIndex < 0){
+                System.out.println("A sorszám nem lehet negatív");
+            }else if (festmenyIndex>festmenyek.size()){
+                System.out.printf("Érvénytelen sorszám a listában csak %d festmény található\n", festmenyek.size());
+            }else if (festmenyIndex>0){
+                if (festmenyek.get(festmenyIndex-1).getElkelt()){
+                    System.out.println("A festmány már elkelt");
+                }else{
+
+                }
+            }else{
+                System.out.println("A licitálás lezárult");
+            }
+        }
+    }
+
+    private static void veletlenszeruLicit() {
+        for (int i = 0; i < 20; i++) {
+            int festmenyIndex = (int)(Math.random()*festmenyek.size());
+            festmenyek.get(festmenyIndex).licit();
+        }
+    }
+
+    private static void festmenyekBeolvasasaFajlbol(String fajlNev) throws IOException {
         FileReader fr = new FileReader(fajlNev);
         BufferedReader br = new BufferedReader(fr);
         String sor = br.readLine();
@@ -66,12 +88,22 @@ public class Main {
         }
         br.close();
         fr.close();
+
     }
 
-    public static void random(){
-        for (int i = 0; i < 20; i++) {
-            int random = (int)(Math.random()*festmenyek.size());
-
+    private static void festmenyekFelveteleKonzolrol(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Adja meg, hogy hány festményt szeretne felvenni: ");
+        int db = sc.nextInt();
+        for (int i = 0; i < db; i++) {
+            System.out.printf("Kérem adja meg a(z) %d festmény címét: ",(i+1));
+            String cim = sc.nextLine();
+            System.out.printf("Kérem adja meg a(z) %d festő nevét: ",(i+1));
+            String festo = sc.nextLine();
+            System.out.printf("Kérem adja meg a(z) %d festmény stílusát:", (i+1));
+            String stilus = sc.nextLine();
+            Festmeny festmeny = new Festmeny(cim, festo, stilus);
+            festmenyek.add(festmeny);
         }
     }
 }
